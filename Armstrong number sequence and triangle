@@ -1,0 +1,115 @@
+using System;
+
+namespace TESTAPP
+{
+    class Program
+    {
+        static void IsArmstrongNumber() 
+        {
+            Console.WriteLine("Write the number to check if it is armstrong one or not");
+            int n;
+            int check;
+            int sum = 0;
+            int rem;
+            n = int.Parse(Console.ReadLine());
+            check = n;
+
+
+            while (n > 0)
+            {
+                rem = n % 10;
+                sum = sum + rem * rem * rem;
+                n = n / 10;
+
+
+            }
+            if (check == sum)
+            {
+                Console.WriteLine("This number is an Armstrong one!");
+            }
+            else
+            {
+                Console.WriteLine("This isnt an Armstrong number");
+            }
+
+        }
+
+
+        static void IsItTriangle()
+        {
+            int n, check = 1;
+            Console.WriteLine("Enter number lets make a triangle  : ");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write(" " + check);
+                    check++;
+                }
+                Console.WriteLine();
+
+            }
+        }
+
+
+        static void IsTheSequenceRight()
+        {
+            int x, y, i, factorial = 1;
+            double pow, ans, d;
+
+
+
+
+
+            Console.WriteLine("Enter two positive integers ");
+            Console.WriteLine("we will analyze this sequence:1 + x+ x^2/2! ... x^y/y!");
+
+
+
+            x = Convert.ToInt32(Console.ReadLine());
+
+            y = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+
+
+            if (y < 0) { Console.WriteLine("negative number entered"); }
+
+            else if (y <= 1) { Console.WriteLine(1 + x); }
+
+            else
+            {
+                for (ans = 0, d = 0, i = 2; i <= y; i++)
+                {
+                    pow = Math.Pow(x, i);
+                    factorial *= i;
+                    d = pow / factorial;
+                    ans += d;
+
+                }
+                Console.WriteLine(1 + x + ans);
+
+            }
+        }
+
+        static void Main(string[] args)
+        {
+            while (true)
+            {
+                IsArmstrongNumber();
+                Console.WriteLine();
+                IsItTriangle();
+                Console.WriteLine();
+                IsTheSequenceRight();
+                Console.WriteLine();
+            }
+        }
+    }
+}
+
+
+
